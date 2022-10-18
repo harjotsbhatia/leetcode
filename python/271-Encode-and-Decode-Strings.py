@@ -15,14 +15,14 @@ class Solution:
     @return: dcodes a single string to a list of strings
     """
 
-    def decode(self, str):
+    def decode(self, s):
         res, i = [], 0
 
-        while i < len(str):
+        while i < len(s):
             j = i
-            while str[j] != "#":
+            while s[j] != "#":
                 j += 1
-            length = int(str[i:j])
+            length = int(s[i:j])
             res.append(str[j + 1 : j + 1 + length])
             i = j + 1 + length
         return res
